@@ -1,0 +1,5 @@
+const path = require('path')
+const build = require('../build/build')
+const webpackConfig = require('./webpack.config')
+const distPath = path.resolve(__dirname, 'dist')
+build(webpackConfig, 'hello_webpack', distPath)
