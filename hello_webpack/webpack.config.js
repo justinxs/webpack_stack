@@ -2,6 +2,7 @@ const path = require('path');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const TerserPlugin = require("terser-webpack-plugin");
 const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
     mode: 'production',
@@ -27,7 +28,10 @@ module.exports = {
             {
                 // 用正则去匹配要用该 loader 转换的 CSS 文件
                 test: /\.css$/,
-                use: [MiniCssExtractPlugin.loader, "css-loader"],
+                use: [
+                    MiniCssExtractPlugin.loader, 
+                    "css-loader"
+                ],
             }
         ]
     },
@@ -36,5 +40,6 @@ module.exports = {
             // 从 .js 文件中提取出来的 .css 文件的名称
             filename: `[name]_[contenthash:8].css`,
         }),
+        new HtmlWebpackPlugin({ template: path.resolve(__dirname, './index.html') }),
     ]
 };
