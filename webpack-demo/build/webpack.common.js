@@ -61,7 +61,7 @@ module.exports = {
             },
             {
                 test: /\.(png|svg|jpg|jpeg|gif)$/i,
-                // 自动地在 resource 和 inline 之间进行选择, 默认maxSize = 8kb
+                // asset 自动地在 asset/resource 和 asset/inline 之间进行选择, 默认size < 8kb 实行asset/inline
                 type: 'asset',
                 parser: {
                     dataUrlCondition: {
@@ -74,7 +74,7 @@ module.exports = {
             },
             {
                 test: /\.(woff|woff2|eot|ttf|otf)$/i,
-                // 自动地在 resource 和 inline 之间进行选择, 默认maxSize = 8kb
+                // asset 自动地在 asset/resource 和 asset/inline 之间进行选择, 默认size < 8kb 实行asset/inline
                 type: 'asset',
                 parser: {
                     dataUrlCondition: {
@@ -119,7 +119,7 @@ module.exports = {
         }),
         // 注入webpack编译时js中的全局变量
         new webpack.DefinePlugin({
-            'process.env.NODE_ENV1': JSON.stringify(process.env.NODE_ENV)
+            'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV)
         })
     ],
     resolve: {
