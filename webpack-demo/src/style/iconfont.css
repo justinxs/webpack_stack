@@ -1,0 +1,73 @@
+@font-face {
+    font-family: "iconfont"; /* Project id 2829316 */
+    src: url('../fonts/iconfont.woff2?t=1632369529762') format('woff2'),
+         url('../fonts/iconfont.woff?t=1632369529762') format('woff'),
+         url('../fonts/iconfont.ttf?t=1632369529762') format('truetype');
+    
+    font-display: swap;
+  }
+  
+  .iconfont {
+    font-family: "iconfont" !important;
+    font-size: 16px;
+    font-style: normal;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  .icon {
+    display: inline-block;
+    height: 100px;
+    line-height: 100px;
+    font-size: 42px;
+    margin: 10px auto;
+    color: #333;
+    -webkit-transition: font-size 0.25s linear, width 0.25s linear;
+       -moz-transition: font-size 0.25s linear, width 0.25s linear;
+            transition: font-size 0.25s linear, width 0.25s linear;
+  }
+  
+  .icon:hover {
+    font-size: 100px;
+  }
+  
+  .icon-banquan:before {
+    content: "\e98b";
+  }
+  
+  .icon-anquanyinsi:before {
+    content: "\e98c";
+  }
+  
+  .icon-dicengjiagou:before {
+    content: "\e98d";
+  }
+  
+  .icon-cangchucangku:before {
+    content: "\e98e";
+  }
+  
+  .icon-bingtutubiao:before {
+    content: "\e98f";
+  }
+  
+  .icon-chufang:before {
+    content: "\e990";
+  }
+  
+  .icon-chayan:before {
+    content: "\e991";
+  }
+  
+  .icon-erweima:before {
+    content: "\e992";
+  }
+  
+  .icon-fapiao:before {
+    content: "\e993";
+  }
+  
+  .icon-fenbushi:before {
+    content: "\e994";
+  }
+  
