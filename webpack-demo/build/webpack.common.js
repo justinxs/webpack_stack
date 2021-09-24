@@ -25,14 +25,11 @@ module.exports = {
                 test: /\.m?js$/,
                 loader: 'babel-loader',
                 exclude: file => {
-                    if (/node_modules[\\/]lodash/.test(file)) {
-                        console.log(file)
-                    }
                     return /node_modules/.test(file)
                 }
             },
             {
-                test: /\.css$/i,
+                test: /\.s?css$/i,
                 use: [
                     {
                         loader: MiniCssExtractPlugin.loader,
@@ -40,19 +37,25 @@ module.exports = {
                             publicPath: '../'
                         }
                     },
-                    'css-loader'
-                ],
-            },
-            {
-                test: /\.scss$/i,
-                use: [
                     {
-                        loader: MiniCssExtractPlugin.loader,
-                        options:{
-                            publicPath: '../'
-                        }
+                        loader: "css-loader",
+                        options: { importLoaders: 1 },
                     },
-                    'css-loader',
+                    {
+                        loader: "postcss-loader",
+                        options: {
+                            postcssOptions: {
+                                plugins: [
+                                    [
+                                        "autoprefixer",
+                                        {
+                                            // Options
+                                        },
+                                    ],
+                                ],
+                            },
+                        },
+                    },
                     'sass-loader'
                 ],
             },
@@ -116,7 +119,7 @@ module.exports = {
         }),
         // 注入webpack编译时js中的全局变量
         new webpack.DefinePlugin({
-            'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV)
+            'process.env.NODE_ENV1': JSON.stringify(process.env.NODE_ENV)
         })
     ],
     resolve: {

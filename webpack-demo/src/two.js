@@ -1,6 +1,5 @@
 import _ from 'lodash';
-import './style/style.css';
-import './style/iconfont.css';
+import './style/index.scss';
 import Icon from './images/icon.png';
 import printMe from './print.js';
 
