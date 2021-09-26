@@ -3,6 +3,7 @@ const { merge } = require('webpack-merge');
 const common = require('./webpack.common.js');
 
 module.exports = merge(common, {
+    // 从 webpack v4 开始, 指定 mode 会自动地配置 process.env.NODE_ENV
     mode: 'development',
     devtool: 'cheap-source-map',
     // webpack-dev-server 和 webpack-dev-middleware 里 Watch 模式默认开启

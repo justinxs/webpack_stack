@@ -4,10 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "cross-env NODE_ENV=development webpack serve --config ./build/webpack.dev.js",
-    "build": "cross-env NODE_ENV=production webpack --config ./build/webpack.prod.js",
-    "multiple": "cross-env NODE_ENV=production webpack --config ./build/webpack.multiple.js",
-    "analyze": "cross-env NODE_ENV=production webpack --config ./build/webpack.analyze.js"
+    "start": "cross-env WP_TARGET=dev webpack serve --config ./build/webpack.dev.js",
+    "build": "cross-env WP_TARGET=prod webpack --config ./build/webpack.prod.js",
+    "multiple": "cross-env WP_TARGET=multiple webpack --config ./build/webpack.multiple.js",
+    "analyze": "cross-env WP_TARGET=analyze webpack --config ./build/webpack.analyze.js"
   },
   "keywords": [],
   "author": "",

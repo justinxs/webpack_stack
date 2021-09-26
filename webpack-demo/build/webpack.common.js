@@ -119,7 +119,7 @@ module.exports = {
         }),
         // 注入webpack编译时js中的全局变量
         new webpack.DefinePlugin({
-            'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV)
+            'process.env.WP_TARGET': JSON.stringify(process.env.WP_TARGET)
         })
     ],
     resolve: {
