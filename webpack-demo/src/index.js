@@ -2,6 +2,7 @@ import _ from 'lodash';
 import './style/index.scss';
 import Icon from './images/icon.png';
 import printMe from './print.js'
+import http from './js/http'
 
 function component() {
     const element = document.createElement('div');
@@ -22,6 +23,9 @@ function component() {
         printMe()
         import(/* webpackPrefetch: true */ './prefetchModule.js').then(({now}) => {
             now()
+        })
+        http.get('/api/activity/getGameRankingList', {page: 1, limit: 100}).then(data => {
+            console.log(data)
         })
     }
     element.appendChild(btn);

@@ -18,6 +18,12 @@ module.exports = merge(common, {
         open: ['http://localhost:9000'],
         client: {
             progress: true
-        }
+        },
+        proxy: {
+            '/api': {
+                target: 'http://localhost:8340',
+                pathRewrite: { '^/api': '/api' },
+            },
+        },
     },
 });
