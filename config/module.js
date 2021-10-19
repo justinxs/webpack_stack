@@ -72,5 +72,25 @@ module.exports = {
         // boolean function (module)
         // 缓存模块请求的解析，cache: false => false,cache: true，并且此模块的来自 node_modules，则值为 true，否则为 false
         unsafeCache: false,
+
+        // 规则数组，这些规则能够对模块(module)应用 loader，或者修改解析器(parser)
+        rules: [
+            // 每个规则可以分为三部分 - 条件(condition)，结果(result)和嵌套规则(nested rule)
+            {
+                // Rule 条件
+                // resource：资源文件的绝对路径。它已经根据 resolve 规则解析。
+                // issuer: 请求者的文件绝对路径。是导入时的位置。
+                // 属性 test, include, exclude 和 resource 对 resource 匹配，并且属性 issuer 对 issuer 匹配
+                // 当使用多个条件时，所有条件都匹配
+                test: /\.js$/,
+                include: /src\//,
+                exclude: /node_modules\//,
+                // 匹配 a.js?inline
+                resourceQuery: /inline/,
+
+
+                
+            }
+        ]
     },
 };
